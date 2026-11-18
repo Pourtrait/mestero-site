@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacybeleid | Mestero Games</title>
+<meta name="description" content="Hoe Mestero Games en Advalor Limited informatie in onze mobiele games verzamelen, gebruiken en beschermen.">
+<link rel="canonical" href="https://mestero.com/privacy/nl/">
+<link rel="alternate" hreflang="en" href="https://mestero.com/privacy">
+<link rel="alternate" hreflang="de" href="https://mestero.com/privacy/de/">
+<link rel="alternate" hreflang="fr" href="https://mestero.com/privacy/fr/">
+<link rel="alternate" hreflang="es" href="https://mestero.com/privacy/es/">
+<link rel="alternate" hreflang="pt" href="https://mestero.com/privacy/pt/">
+<link rel="alternate" hreflang="it" href="https://mestero.com/privacy/it/">
+<link rel="alternate" hreflang="nl" href="https://mestero.com/privacy/nl/">
+<link rel="alternate" hreflang="pl" href="https://mestero.com/privacy/pl/">
+<link rel="alternate" hreflang="da" href="https://mestero.com/privacy/da/">
+<link rel="alternate" hreflang="x-default" href="https://mestero.com/privacy">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<script>
+(function(){
+  var K='mestero_privacy_lang', have=["en", "de", "fr", "es", "pt", "it", "nl", "pl", "da"], here="nl", saved=null;
+  try{saved=localStorage.getItem(K);}catch(e){}
+  if(location.search.indexOf('lang=')>=0){var q=(location.search.match(/lang=([a-z-]+)/i)||[])[1];if(q){try{localStorage.setItem(K,q);}catch(e){} saved=q;}}
+  var pick=saved;
+  if(!pick){var l=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en']);
+    for(var i=0;i<l.length&&!pick;i++){var b=String(l[i]).toLowerCase().split('-')[0];if(have.indexOf(b)>=0)pick=b;}}
+  if(pick&&pick!==here&&have.indexOf(pick)>=0){location.replace((pick==='en'?'../../privacy/':'../../privacy/'+pick+'/')+location.hash);}
+})();
+</script>
+<style>
+@font-face{font-family:Unbounded;src:url(../../assets/fonts/unbounded.woff2) format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:Manrope;src:url(../../assets/fonts/manrope.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--midnight:#050A30;--plum:#9333EA;--lime:#B8FF2C;--line:#E6E7EE;--muted:#4A4F6A}
+*{box-sizing:border-box}
+body{margin:0;background:#FFFFFF;color:var(--midnight);font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.7}
+a{color:var(--plum)}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header.site-header{position:sticky;top:0;z-index:50;background:var(--midnight)}
+.nav{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:16px;flex-wrap:wrap}
+.nav img{height:48px;width:auto;display:block}
+.nav a.home{font-weight:700;color:#FFFFFF;text-decoration:none}
+.nav a.home:hover{color:var(--lime)}
+html{scroll-padding-top:96px}
+h1,h2,h3{font-family:Unbounded,sans-serif;letter-spacing:-.01em;line-height:1.2}
+h1{font-weight:800;font-size:clamp(34px,5vw,52px);margin:64px 0 8px}
+h2{font-weight:700;font-size:24px;margin:48px 0 12px}
+h3{font-weight:600;font-size:18px;margin:28px 0 8px}
+.meta{color:var(--muted);margin:0 0 32px}
+.toc{border:2px solid var(--line);border-radius:20px;padding:20px 28px;margin:24px 0 8px}
+.toc ol{margin:0;padding-left:20px}
+table{width:100%;border-collapse:collapse;margin:12px 0 8px;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:2px solid var(--line)}
+th{font-weight:700}
+.table-box{overflow-x:auto}
+.note{background:#F4FFE0;border-radius:16px;padding:16px 20px;margin:16px 0}
+footer{border-top:2px solid var(--line);margin-top:80px;padding:32px 0 48px;color:var(--muted);font-size:14px}
+.navr{display:flex;align-items:center;gap:18px}
+.lang select{font:600 15px Manrope,system-ui,sans-serif;color:#FFFFFF;background:transparent;border:2px solid rgba(255,255,255,.35);border-radius:12px;padding:6px 30px 6px 12px;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.lang select:hover,.lang select:focus{border-color:var(--lime);outline:none}
+.lang option{color:#050A30}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="nav">
+<a href="../../" aria-label="Mestero Games home"><img src="../../assets/mestero-wordmark-peek-games-reversed.svg" alt="Mestero Games" width="150" height="42"></a>
+<div class="navr"><label class="lang"><span class="sr">Taal</span><select aria-label="Taal" onchange="try{localStorage.setItem('mestero_privacy_lang',this.value)}catch(e){};location.href=this.value==='en'?'../../privacy/':'../../privacy/'+this.value+'/'"><option value="en">English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="pt">Português</option><option value="it">Italiano</option><option value="nl" selected>Nederlands</option><option value="pl">Polski</option><option value="da">Dansk</option></select></label><a class="home" href="../../">Terug naar home</a></div>
+</div>
+</header>
+
+<main class="wrap">
+<h1>Privacybeleid</h1>
+<p class="meta">Laatst bijgewerkt: 17 november 2026</p>
+<p class="note">Dit is een vertaling van ons Engelstalige privacybeleid, voor je gemak. Als de twee versies verschillen, geldt de Engelse versie.</p>
+
+<p>Dit beleid legt uit welke informatie we verzamelen als je games van Mestero Games speelt, hoe we die gebruiken, met wie we die delen en welke keuzes je hebt. Mestero Games is een gamelabel van <b>Advalor Limited</b>, een bedrijf ingeschreven in Engeland en Wales ("we", "ons", "onze"). Advalor Limited is de verwerkingsverantwoordelijke voor de games in sectie 2.</p>
+
+<div class="toc">
+<ol>
+<li><a href="#who">Wie we zijn</a></li>
+<li><a href="#games">Games waarvoor dit beleid geldt</a></li>
+<li><a href="#collect">Informatie die we verzamelen</a></li>
+<li><a href="#use">Hoe we informatie gebruiken</a></li>
+<li><a href="#ads">Advertenties</a></li>
+<li><a href="#partners">Partners met wie we informatie delen</a></li>
+<li><a href="#legal">Rechtsgronden (VK en EU)</a></li>
+<li><a href="#children">Kinderen</a></li>
+<li><a href="#retention">Hoe lang we informatie bewaren</a></li>
+<li><a href="#rights">Je rechten en keuzes</a></li>
+<li><a href="#delete">Je gegevens verwijderen</a></li>
+<li><a href="#transfers">Internationale doorgifte</a></li>
+<li><a href="#security">Beveiliging</a></li>
+<li><a href="#us">Californië en andere Amerikaanse staten</a></li>
+<li><a href="#changes">Wijzigingen in dit beleid</a></li>
+<li><a href="#contact">Contact</a></li>
+</ol>
+</div>
+
+<h2 id="who">1. Wie we zijn</h2>
+<p>Advalor Limited, handelend als Mestero Games. Statutaire zetel: 20 - 22 Wenlock Road, Londen, Verenigd Koninkrijk. Bedrijfsnummer: 12539662. E-mail: <a href="mailto:privacy@mestero.com">privacy@mestero.com</a>.</p>
+
+<h2 id="games">2. Games waarvoor dit beleid geldt</h2>
+<p>Dit beleid geldt voor alle games die we uitbrengen via Google Play, de Apple App Store en webgameplatforms, waaronder:</p>
+<div class="table-box">
+<table>
+<thead><tr><th>Game</th><th>Platforms</th><th>Gebruikte partners (zie sectie 6)</th></tr></thead>
+<tbody>
+<tr><td>Pourtrait</td><td>Android, iOS, web</td><td>Google AdMob en de advertentienetwerken die het inzet, GameAnalytics, RevenueCat, Google Firebase, Tenjin, in-app-aankopen via Google Play en Apple</td></tr>
+</tbody>
+</table>
+</div>
+<p>Als we een nieuwe game uitbrengen, voegen we die toe aan deze tabel. Gebruikt een game een partner die niet in sectie 6 staat, dan werken we dit beleid bij voordat de game uitkomt.</p>
+
+<h2 id="collect">3. Informatie die we verzamelen</h2>
+<p>Onze games vragen niet om je echte naam, e-mailadres, telefoonnummer, contacten, foto's of precieze locatie. We verzamelen het volgende:</p>
+<h3>Automatisch verzamelde informatie</h3>
+<ul>
+<li><b>Apparaat- en appgegevens:</b> apparaatmodel, besturingssysteem en versie, taal, tijdzone, appversie en gegevens over crashes en prestaties.</li>
+<li><b>ID's:</b> een advertentie-ID van het apparaat (Google-advertentie-ID op Android, IDFA op iOS als je tracking toestaat), een installatie-ID van de app en je IP-adres, waaruit een globaal land of gebied kan worden afgeleid.</li>
+<li><b>Spelgegevens:</b> gespeelde en voltooide levels, voortgang, munten en items, instellingen, sessieduur en hoe je functies en advertenties gebruikt.</li>
+<li><b>Advertentie- en attributiegegevens:</b> welke advertenties je hebt gezien of aangetikt en, indien van toepassing, welke advertentiecampagne je ertoe bracht de game te installeren.</li>
+</ul>
+<h3>Informatie die je zelf geeft</h3>
+<ul>
+<li><b>Spelersnaam:</b> als je een spelersnaam kiest voor de ranglijsten, wordt die met je score opgeslagen en aan andere spelers getoond. Gebruik niet je echte naam of iets anders waaraan je te herkennen bent.</li>
+<li><b>Berichten aan support:</b> als je ons mailt, ontvangen we je e-mailadres en alles wat je in je bericht zet.</li>
+</ul>
+<h3>Aankopen</h3>
+<p>In-app-aankopen worden verwerkt door Google Play of Apple. We ontvangen een bevestiging van wat er wanneer is gekocht. Onze aankoopdienst, RevenueCat, ontvangt de aankoopbevestiging van de store en een anonieme gebruikers-ID van de app, zodat aankopen kunnen worden gecontroleerd en op een nieuw apparaat hersteld. We zien of bewaren nooit je kaart- of betaalgegevens.</p>
+
+<h2 id="use">4. Hoe we informatie gebruiken</h2>
+<ul>
+<li>Om de game te laten werken, je voortgang op te slaan en de ranglijsten bij te houden.</li>
+<li>Om aankopen te leveren en op een nieuw apparaat te herstellen.</li>
+<li>Om bugs te verhelpen, prestaties te meten en levels en functies te verbeteren.</li>
+<li>Om advertenties te tonen, ook gepersonaliseerde als je dat hebt toegestaan, en te beperken hoe vaak je ze ziet.</li>
+<li>Om te begrijpen welke marketingcampagnes nieuwe spelers opleveren, zodat we ons marketingbudget verstandig besteden.</li>
+<li>Om fraude, valsspelen en misbruik te voorkomen en aan onze wettelijke plichten te voldoen.</li>
+</ul>
+<p>We verkopen je persoonsgegevens niet voor geld.</p>
+
+<h2 id="ads">5. Advertenties</h2>
+<p>Onze gratis games worden betaald met advertenties. Advertenties worden geleverd via Google AdMob, dat een veiling houdt tussen verschillende advertentienetwerken. Deze partners kunnen de advertentie-ID van je apparaat en andere apparaatgegevens gebruiken om advertenties te tonen, te meten en, waar toegestaan, te personaliseren.</p>
+<ul>
+<li><b>Spelers in het VK, de EU en de EER:</b> we vragen je toestemming voordat we gepersonaliseerde advertenties tonen. Je kunt je keuze altijd wijzigen via de privacyoptie in de instellingen van de game.</li>
+<li><b>iOS-spelers:</b> we gebruiken je IDFA alleen als je tracking toestaat in de melding van Apple. Je kunt dit wijzigen in de Instellingen van je iPhone onder Privacy en beveiliging, Tracking.</li>
+<li><b>Android-spelers:</b> je kunt je advertentie-ID resetten of verwijderen in de Instellingen van je apparaat onder Privacy, Advertenties.</li>
+</ul>
+<p>Als je gepersonaliseerde advertenties weigert, zie je nog steeds advertenties, maar die zijn minder relevant voor je.</p>
+
+<h2 id="partners">6. Partners met wie we informatie delen</h2>
+<p>We delen informatie alleen met dienstverleners die ons helpen onze games te draaien, en alleen wat ze nodig hebben. Elke partner verwerkt gegevens volgens zijn eigen privacybeleid:</p>
+<div class="table-box">
+<table>
+<thead><tr><th>Partner</th><th>Doel</th><th>Privacybeleid</th></tr></thead>
+<tbody>
+<tr><td>Google AdMob</td><td>Advertentiemediatie en levering van advertenties</td><td><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a></td></tr>
+<tr><td>Advertentienetwerken via Google AdMob</td><td>Levering en meting van advertenties</td><td>Vermeld, met links naar hun privacybeleid, in de privacymelding in de game</td></tr>
+<tr><td>GameAnalytics</td><td>Spelanalyse: voortgang in levels, spelbalans en A/B-tests</td><td><a href="https://gameanalytics.com/privacy/" rel="noopener">gameanalytics.com/privacy</a></td></tr>
+<tr><td>RevenueCat</td><td>Controleren en herstellen van in-app-aankopen</td><td><a href="https://www.revenuecat.com/privacy/" rel="noopener">revenuecat.com/privacy</a></td></tr>
+<tr><td>Google Firebase</td><td>Ranglijsten, opslag in de cloud, crashrapporten en pushmeldingen</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></td></tr>
+<tr><td>Tenjin</td><td>Installatieattributie en marketingmeting</td><td><a href="https://www.tenjin.com/privacy/" rel="noopener">tenjin.com/privacy</a></td></tr>
+<tr><td>Google Play en Apple</td><td>Distributie van de app en in-app-aankopen</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>, <a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></td></tr>
+</tbody>
+</table>
+</div>
+<p>We kunnen informatie ook delen als de wet dat vereist, om onze rechten of de veiligheid van onze spelers te beschermen, of bij een verkoop of herstructurering van ons bedrijf; dit beleid blijft dan van toepassing.</p>
+
+<h2 id="legal">7. Rechtsgronden (VK en EU)</h2>
+<ul>
+<li><b>Overeenkomst:</b> om de game te leveren, voortgang op te slaan en aankopen te leveren.</li>
+<li><b>Toestemming:</b> voor gepersonaliseerde advertenties en, waar nodig, voor advertentie-ID's en attributie.</li>
+<li><b>Gerechtvaardigd belang:</b> voor analyse, crashrapporten, fraudepreventie en niet-gepersonaliseerde advertenties, voor zover jouw belangen niet zwaarder wegen.</li>
+<li><b>Wettelijke plicht:</b> om wettelijk verplichte gegevens te bewaren, zoals belastinggegevens van aankopen.</li>
+</ul>
+
+<h2 id="children">8. Kinderen</h2>
+<p>Onze games zijn gemaakt voor een algemeen publiek en niet gericht op kinderen jonger dan 13 jaar (of jonger dan 16 in de EU en het VK, waar de lokale wet die leeftijd vaststelt). We verzamelen niet bewust persoonsgegevens van kinderen. Denk je dat een kind ons persoonsgegevens heeft gegeven, neem dan contact met ons op en we verwijderen ze. Als een game een speler als kind herkent, zetten we gepersonaliseerde advertenties uit en beperken we de gegevensverzameling tot wat de game nodig heeft om te werken.</p>
+
+<h2 id="retention">9. Hoe lang we informatie bewaren</h2>
+<p>We bewaren spel- en ranglijstgegevens zolang je blijft spelen en verwijderen of anonimiseren ze na 24 maanden inactiviteit. Analysegegevens worden samengevoegd of gepseudonimiseerd maximaal 26 maanden bewaard. Aankoopgegevens worden bewaard zolang de belasting- en boekhoudwetgeving vereist. Partners bewaren gegevens volgens hun eigen beleid.</p>
+
+<h2 id="rights">10. Je rechten en keuzes</h2>
+<p>Afhankelijk van waar je woont, kun je ons vragen je persoonsgegevens in te zien, te corrigeren, te verwijderen of te exporteren, het gebruik ervan te beperken of er bezwaar tegen te maken, en je toestemming op elk moment in te trekken. Mail naar <a href="mailto:privacy@mestero.com">privacy@mestero.com</a> en vermeld de naam van de game en, als dat kan, de speler-ID uit de instellingen van de game, zodat we je gegevens kunnen vinden. We antwoorden binnen een maand. In het VK kun je ook een klacht indienen bij het Information Commissioner's Office (ico.org.uk), en in de EU bij je lokale toezichthouder voor gegevensbescherming.</p>
+
+<h2 id="delete">11. Je gegevens verwijderen</h2>
+<p>Zo verwijder je je spelgegevens, inclusief je spelersnaam, scores en opgeslagen voortgang:</p>
+<ol>
+<li>Mail naar <a href="mailto:privacy@mestero.com?subject=Delete%20my%20data">privacy@mestero.com</a> met als onderwerp "Delete my data".</li>
+<li>Vermeld de naam van de game en je speler-ID (te vinden in de instellingen van de game).</li>
+</ol>
+<p>We verwijderen je gegevens binnen 30 dagen en bevestigen dat per e-mail. Als je de game verwijdert, worden de gegevens op je apparaat gewist, maar niet de gegevens op onze servers, dus stuur het verzoek als je alles verwijderd wilt hebben. Aankopen via Google Play of Apple blijven bij die stores geregistreerd.</p>
+
+<h2 id="transfers">12. Internationale doorgifte</h2>
+<p>Onze partners kunnen informatie verwerken buiten het VK en de EU, ook in de Verenigde Staten. In dat geval vertrouwen we op passende waarborgen, zoals het Britse International Data Transfer Addendum, de modelcontractbepalingen van de EU of adequaatheidsbesluiten.</p>
+
+<h2 id="security">13. Beveiliging</h2>
+<p>We gebruiken versleuteling tijdens verzending, toegangscontrole en betrouwbare dienstverleners om informatie te beschermen. Geen enkel systeem is volledig veilig, maar we werken eraan je gegevens te beschermen en melden een datalek aan jou en de autoriteiten waar de wet dat vereist.</p>
+
+<h2 id="us">14. Californië en andere Amerikaanse staten</h2>
+<p>We verkopen geen persoonsgegevens voor geld. Het tonen van gepersonaliseerde advertenties kan onder sommige wetten van Amerikaanse staten gelden als "delen" of "gerichte advertenties". Je kunt je afmelden door gepersonaliseerde advertenties te weigeren in de privacyinstellingen van de game, door advertentietracking op je apparaat te beperken of door ons te mailen. We behandelen je niet anders omdat je je privacyrechten gebruikt.</p>
+
+<h2 id="changes">15. Wijzigingen in dit beleid</h2>
+<p>We werken dit beleid bij als we games of partners toevoegen, of als de wet verandert. De datum bovenaan toont de nieuwste versie. Bij belangrijke wijzigingen laten we het je in de game weten.</p>
+
+<h2 id="contact">16. Contact</h2>
+<p>Advalor Limited, handelend als Mestero Games<br>20 - 22 Wenlock Road, Londen, Verenigd Koninkrijk<br>E-mail: <a href="mailto:privacy@mestero.com">privacy@mestero.com</a></p>
+</main>
+
+<footer>
+<div class="wrap">© 2026 Advalor Limited. Mestero Games is een gamelabel van Advalor Limited. <a href="../../">mestero.com</a></div>
+</footer>
+</body>
+</html>

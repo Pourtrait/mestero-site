@@ -6,8 +6,29 @@
 <title>Privacy Policy | Mestero Games</title>
 <meta name="description" content="How Mestero Games and Advalor Limited collect, use and protect information in our mobile games.">
 <link rel="canonical" href="https://mestero.com/privacy">
+<link rel="alternate" hreflang="en" href="https://mestero.com/privacy">
+<link rel="alternate" hreflang="de" href="https://mestero.com/privacy/de/">
+<link rel="alternate" hreflang="fr" href="https://mestero.com/privacy/fr/">
+<link rel="alternate" hreflang="es" href="https://mestero.com/privacy/es/">
+<link rel="alternate" hreflang="pt" href="https://mestero.com/privacy/pt/">
+<link rel="alternate" hreflang="it" href="https://mestero.com/privacy/it/">
+<link rel="alternate" hreflang="nl" href="https://mestero.com/privacy/nl/">
+<link rel="alternate" hreflang="pl" href="https://mestero.com/privacy/pl/">
+<link rel="alternate" hreflang="da" href="https://mestero.com/privacy/da/">
+<link rel="alternate" hreflang="x-default" href="https://mestero.com/privacy">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<script>
+(function(){
+  var K='mestero_privacy_lang', have=["en", "de", "fr", "es", "pt", "it", "nl", "pl", "da"], here="en", saved=null;
+  try{saved=localStorage.getItem(K);}catch(e){}
+  if(location.search.indexOf('lang=')>=0){var q=(location.search.match(/lang=([a-z-]+)/i)||[])[1];if(q){try{localStorage.setItem(K,q);}catch(e){} saved=q;}}
+  var pick=saved;
+  if(!pick){var l=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||'en']);
+    for(var i=0;i<l.length&&!pick;i++){var b=String(l[i]).toLowerCase().split('-')[0];if(have.indexOf(b)>=0)pick=b;}}
+  if(pick&&pick!==here&&have.indexOf(pick)>=0){location.replace((pick==='en'?'../privacy/':'../privacy/'+pick+'/')+location.hash);}
+})();
+</script>
 <style>
 @font-face{font-family:Unbounded;src:url(../assets/fonts/unbounded.woff2) format("woff2");font-weight:200 900;font-display:swap}
 @font-face{font-family:Manrope;src:url(../assets/fonts/manrope.woff2) format("woff2");font-weight:200 800;font-display:swap}
@@ -35,13 +56,18 @@ th{font-weight:700}
 .table-box{overflow-x:auto}
 .note{background:#F4FFE0;border-radius:16px;padding:16px 20px;margin:16px 0}
 footer{border-top:2px solid var(--line);margin-top:80px;padding:32px 0 48px;color:var(--muted);font-size:14px}
+.navr{display:flex;align-items:center;gap:18px}
+.lang select{font:600 15px Manrope,system-ui,sans-serif;color:#FFFFFF;background:transparent;border:2px solid rgba(255,255,255,.35);border-radius:12px;padding:6px 30px 6px 12px;appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 16px) 50%,calc(100% - 11px) 50%;background-size:5px 5px;background-repeat:no-repeat;cursor:pointer}
+.lang select:hover,.lang select:focus{border-color:var(--lime);outline:none}
+.lang option{color:#050A30}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="nav">
 <a href="../" aria-label="Mestero Games home"><img src="../assets/mestero-wordmark-peek-games-reversed.svg" alt="Mestero Games" width="150" height="42"></a>
-<a class="home" href="../">Back to home</a>
+<div class="navr"><label class="lang"><span class="sr">Language</span><select aria-label="Language" onchange="try{localStorage.setItem('mestero_privacy_lang',this.value)}catch(e){};location.href=this.value==='en'?'../privacy/':'../privacy/'+this.value+'/'"><option value="en" selected>English</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option><option value="pt">Português</option><option value="it">Italiano</option><option value="nl">Nederlands</option><option value="pl">Polski</option><option value="da">Dansk</option></select></label><a class="home" href="../">Back to home</a></div>
 </div>
 </header>
 
