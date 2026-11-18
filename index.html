@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mestero Games: small, surprising mobile games</title>
+<meta name="description" content="Mestero Games makes small, surprising puzzle games for your phone. Take a peek.">
+<link rel="canonical" href="https://mestero.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mestero.com/">
+<meta property="og:title" content="Mestero Games">
+<meta property="og:description" content="Small, surprising games for your phone. Take a peek.">
+<meta property="og:image" content="https://mestero.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+@font-face{font-family:Unbounded;src:url(assets/fonts/unbounded.woff2) format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:Manrope;src:url(assets/fonts/manrope.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--white:#FFFFFF;--midnight:#050A30;--plum:#9333EA;--lime:#B8FF2C;--sky:#00C2FF;--line:#E6E7EE;--muted:#4A4F6A;--tint:#F6F0FE}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;background:var(--white);color:var(--midnight);font-family:Manrope,system-ui,sans-serif;font-size:17px;line-height:1.6}
+a{color:var(--plum)}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{font-family:Unbounded,sans-serif;margin:0}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:var(--midnight)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;flex-wrap:wrap}
+.nav .brand img{height:48px;width:auto}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--white);text-decoration:none;font-weight:700;font-size:16px;padding:6px 0;border-bottom:2px solid transparent}
+.nav ul a:hover,.nav ul a:focus-visible{color:var(--lime);border-bottom-color:var(--lime)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center;padding-top:96px;padding-bottom:112px}
+h1{font-weight:800;font-size:clamp(48px,7.5vw,92px);line-height:1;letter-spacing:-.025em}
+.lead{font-size:20px;color:var(--muted);max-width:520px;margin:28px 0 36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:999px;font-family:Unbounded,sans-serif;font-weight:600;font-size:15px;text-decoration:none;border:2px solid transparent}
+.btn-primary{background:var(--lime);color:var(--midnight)}
+.btn-primary:hover{background:#A6F01A}
+.peek{width:min(420px,100%);margin-left:auto}
+
+/* section heads */
+.section{padding-bottom:112px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px 48px;align-items:end;padding-top:40px;margin-bottom:44px;border-top:2px solid var(--midnight)}
+.kicker{grid-column:1/-1;display:inline-flex;align-items:center;gap:10px;justify-self:start;margin:0;background:var(--midnight);color:var(--white);border-radius:999px;padding:6px 16px 6px 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.kicker svg{width:24px;height:24px}
+h2{font-weight:800;font-size:clamp(40px,6vw,76px);line-height:1;letter-spacing:-.03em}
+.hl{background:linear-gradient(180deg,transparent 60%,var(--lime) 60%,var(--lime) 90%,transparent 90%);padding:0 .06em}
+.sec-sub{margin:0;color:var(--muted);font-size:18px}
+
+/* game block */
+.game{border:2px solid var(--line);border-radius:32px;overflow:hidden}
+.game-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.game-id{background:var(--tint);padding:48px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.game-icon{width:200px;height:200px;border-radius:44px;object-fit:cover;box-shadow:0 0 0 2px rgba(5,10,48,.06)}
+.game-name{font-weight:800;font-size:32px;line-height:1.15;letter-spacing:-.02em}
+.bubble{display:inline-flex;align-items:center;min-height:32px;padding:0 16px;border-radius:999px;background:var(--sky);color:var(--midnight);font-weight:700;font-size:14px}
+.game-info{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.game-info p{margin:0;font-size:20px;line-height:1.55}
+.gp{display:inline-block;align-self:flex-start;text-decoration:none;border-radius:12px}
+.gp img{height:64px;width:auto}
+.shots{border-top:2px solid var(--line);padding:32px 48px 40px}
+.shots-label{margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.shots-row{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory}
+.shot{flex:0 0 auto;width:168px;padding:0;border:0;background:none;border-radius:18px;cursor:zoom-in;scroll-snap-align:start}
+.shot img{width:168px;aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:2px solid var(--line);transition:transform .15s ease}
+.shot:hover img,.shot:focus-visible img{transform:translateY(-4px)}
+.shot:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+@media (min-width:861px){.shots-row{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px;overflow:visible}.shot,.shot img{width:100%}.shot img{height:auto}}
+
+/* next game */
+.next{border:2px solid var(--line);border-radius:32px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.next-art{background:var(--midnight);min-height:320px;display:flex;align-items:center;justify-content:center;position:relative}
+.next-art .q{font-family:Unbounded,sans-serif;font-weight:800;font-size:180px;line-height:1;color:var(--lime)}
+.next-art svg{position:absolute;width:88px;right:28px;bottom:24px}
+.next-info{padding:48px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.next-info h3{font-weight:800;font-size:32px;letter-spacing:-.02em}
+.next-info p{margin:0;font-size:19px;color:var(--muted)}
+.tag-dev{align-self:flex-start;display:inline-flex;align-items:center;min-height:32px;padding:0 16px;border-radius:999px;background:var(--lime);font-weight:700;font-size:14px}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(5,10,48,.94);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox img{max-height:88vh;max-width:min(92vw,520px);border-radius:20px;box-shadow:0 0 0 2px rgba(255,255,255,.12)}
+.lb-btn{position:absolute;width:52px;height:52px;border-radius:50%;border:0;background:var(--white);color:var(--midnight);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lb-btn:hover{background:var(--lime)}
+.lb-btn svg{width:22px;height:22px}
+.lb-close{top:20px;right:20px}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%)}
+.lb-next{right:20px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:var(--white);font-weight:700;font-size:14px}
+
+/* footer */
+footer{background:var(--midnight);color:#D5D7E5;padding:56px 0 40px}
+.foot{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.foot img{height:48px;width:auto}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.foot a{color:var(--white);text-decoration:none;font-weight:700}
+.foot a:hover{color:var(--lime)}
+.legal{margin-top:40px;font-size:14px;color:#A9ADC4}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:56px;padding-bottom:72px}
+  .peek{margin:0 auto;width:min(300px,80%)}
+  .sec-head{grid-template-columns:1fr}
+  .game-top,.next{grid-template-columns:1fr}
+  .game-id,.game-info,.next-info{padding:32px 24px}
+  .shots{padding:24px}
+  .nav{padding-top:12px;padding-bottom:12px}
+  .nav ul{gap:20px}
+  .lb-prev,.lb-next{top:auto;bottom:16px;transform:none}
+  .lb-prev{left:16px}.lb-next{right:16px}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="wrap nav">
+<a class="brand" href="./" aria-label="Mestero Games home"><img src="assets/mestero-wordmark-peek-games-reversed.svg" alt="Mestero Games" width="150" height="42"></a>
+<nav aria-label="Main"><ul><li><a href="#games">Our games</a></li><li><a href="privacy/">Privacy</a></li><li><a href="mailto:contact@mestero.com">Contact</a></li></ul></nav>
+</div>
+</header>
+
+<main>
+<section class="wrap hero">
+<div>
+<h1>Take a peek.</h1>
+<p class="lead">We make small, surprising games for your phone. Quick to pick up, a little mysterious, and fun enough to open again tomorrow.</p>
+<a class="btn btn-primary" href="#games">See our games</a>
+</div>
+<svg class="peek" viewBox="0 0 100 100" role="img" aria-label="The Mestero character peeking">
+<circle cx="50" cy="50" r="50" fill="#050A30"/>
+<ellipse cx="36" cy="48" rx="13" ry="15" fill="#FFFFFF"/>
+<ellipse cx="64" cy="48" rx="13" ry="15" fill="#FFFFFF"/>
+<g id="pupilL"><circle cx="42" cy="50" r="6.5" fill="#050A30"/><circle cx="44" cy="47" r="2" fill="#B8FF2C"/></g>
+<g id="pupilR"><circle cx="70" cy="50" r="6.5" fill="#050A30"/><circle cx="72" cy="47" r="2" fill="#B8FF2C"/></g>
+</svg>
+</section>
+
+<!-- OUR GAMES -->
+<section class="wrap section" id="games">
+<header class="sec-head">
+<p class="kicker"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#FFFFFF"/><ellipse cx="35" cy="47" rx="12" ry="16" fill="#050A30"/><ellipse cx="65" cy="47" rx="12" ry="16" fill="#050A30"/><circle cx="40" cy="50" r="6" fill="#B8FF2C"/><circle cx="70" cy="50" r="6" fill="#B8FF2C"/></svg>Now playing</p>
+<h2>Our <span class="hl">games</span></h2>
+<p class="sec-sub">Short sessions, no pressure, and a little surprise in every level.</p>
+</header>
+
+<article class="game" aria-labelledby="pourtrait-name">
+<div class="game-top">
+<div class="game-id">
+<img class="game-icon" src="assets/games/pourtrait/icon.webp" alt="Pourtrait app icon" width="200" height="200">
+<h3 class="game-name" id="pourtrait-name">Pourtrait: Color Sort Jigsaw</h3>
+<span class="bubble">Puzzle</span>
+</div>
+<div class="game-info">
+<p>Pour the colors back into a black and white picture, then piece it together as a jigsaw. Relaxing, no timers, and a new art style in every level.</p>
+<a class="gp" href="https://play.google.com/store/apps/details?id=com.mestero.pourtrait" target="_blank" rel="noopener">
+<img src="assets/google-play-badge.webp" alt="Get it on Google Play" width="216" height="64">
+</a>
+</div>
+</div>
+<div class="shots">
+<p class="shots-label">Screenshots</p>
+<div class="shots-row" data-gallery="pourtrait">
+<button class="shot" type="button" aria-label="Open screenshot 1: Pour the colors. Piece the picture."><img src="assets/games/pourtrait/screen-1-thumb.webp" data-full="assets/games/pourtrait/screen-1.webp" alt="Pourtrait: Pour the colors. Piece the picture." width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 2: Sort the paint: fill each bottle with one color"><img src="assets/games/pourtrait/screen-2-thumb.webp" data-full="assets/games/pourtrait/screen-2.webp" alt="Pourtrait: Sort the paint: fill each bottle with one color" width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 3: Watch it come alive: every full bottle paints the picture"><img src="assets/games/pourtrait/screen-3-thumb.webp" data-full="assets/games/pourtrait/screen-3.webp" alt="Pourtrait: Watch it come alive: every full bottle paints the picture" width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 4: Piece it back together: matching pieces snap and move as one"><img src="assets/games/pourtrait/screen-4-thumb.webp" data-full="assets/games/pourtrait/screen-4.webp" alt="Pourtrait: Piece it back together: matching pieces snap and move as one" width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 5: No timers. No fails. Every level ends in a finished painting"><img src="assets/games/pourtrait/screen-5-thumb.webp" data-full="assets/games/pourtrait/screen-5.webp" alt="Pourtrait: No timers. No fails. Every level ends in a finished painting" width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 6: A new art style every level"><img src="assets/games/pourtrait/screen-6-thumb.webp" data-full="assets/games/pourtrait/screen-6.webp" alt="Pourtrait: A new art style every level" width="168" height="299" loading="lazy"></button>
+<button class="shot" type="button" aria-label="Open screenshot 7: Collect bottle skins by finishing albums"><img src="assets/games/pourtrait/screen-7-thumb.webp" data-full="assets/games/pourtrait/screen-7.webp" alt="Pourtrait: Collect bottle skins by finishing albums" width="168" height="299" loading="lazy"></button>
+</div>
+</div>
+</div>
+</article>
+</section>
+
+<!-- COMING SOON -->
+<section class="wrap section" id="next">
+<header class="sec-head">
+<p class="kicker"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#FFFFFF"/><ellipse cx="35" cy="47" rx="12" ry="16" fill="#050A30"/><ellipse cx="65" cy="47" rx="12" ry="16" fill="#050A30"/><circle cx="40" cy="50" r="6" fill="#B8FF2C"/><circle cx="70" cy="50" r="6" fill="#B8FF2C"/></svg>Coming soon</p>
+<h2>Next <span class="hl">up</span></h2>
+<p class="sec-sub">We're working on something new. That's all we can say for now.</p>
+</header>
+<article class="next">
+<div class="next-art">
+<span class="q" aria-hidden="true">?</span>
+<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="50" fill="#9333EA"/><ellipse cx="36" cy="48" rx="13" ry="15" fill="#FFFFFF"/><ellipse cx="64" cy="48" rx="13" ry="15" fill="#FFFFFF"/><circle cx="38" cy="45" r="6.5" fill="#050A30"/><circle cx="66" cy="45" r="6.5" fill="#050A30"/></svg>
+</div>
+<div class="next-info">
+<span class="tag-dev">In development</span>
+<h3>Something's hiding</h3>
+<p>Our next game is still a secret. Check back soon to take the first peek.</p>
+</div>
+</article>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<img src="assets/mestero-lockup-reversed.svg" alt="Mestero Games" width="220" height="48">
+<ul>
+<li><a href="#games">Our games</a></li>
+<li><a href="privacy/">Privacy policy</a></li>
+<li><a href="mailto:contact@mestero.com">contact@mestero.com</a></li>
+</ul>
+</div>
+<p class="legal">© 2026 Advalor Limited. Mestero Games is a games label of Advalor Limited. Google Play and the Google Play logo are trademarks of Google LLC.</p>
+</div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+<button class="lb-btn lb-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<button class="lb-btn lb-prev" type="button" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+<img id="lb-img" src="" alt="">
+<button class="lb-btn lb-next" type="button" aria-label="Next screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+<p class="lb-count" id="lb-count"></p>
+</div>
+
+<script>
+(function(){
+  // eyes follow the pointer
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var svg = document.querySelector('.peek'), L = document.getElementById('pupilL'), R = document.getElementById('pupilR');
+  if (!reduce && svg && L && R) {
+    window.addEventListener('pointermove', function(e){
+      var b = svg.getBoundingClientRect(), dx = e.clientX - (b.left + b.width/2), dy = e.clientY - (b.top + b.height/2);
+      var d = Math.sqrt(dx*dx + dy*dy) || 1, m = Math.min(1, d/300);
+      var t = 'translate(' + ((dx/d)*5*m - 3).toFixed(2) + ' ' + ((dy/d)*6*m - 1).toFixed(2) + ')';
+      L.setAttribute('transform', t); R.setAttribute('transform', t);
+    });
+  }
+
+  // screenshot viewer
+  var lb = document.getElementById('lightbox'), img = document.getElementById('lb-img'), count = document.getElementById('lb-count');
+  var list = [], idx = 0, lastFocus = null;
+  function show(i){ idx = (i + list.length) % list.length; img.src = list[idx].src; img.alt = list[idx].alt; count.textContent = (idx + 1) + ' / ' + list.length; }
+  function open(row, i){
+    list = Array.prototype.map.call(row.querySelectorAll('.shot img'), function(x){ return {src:x.getAttribute('data-full') || x.src, alt:x.alt}; });
+    if (!list.length) return;
+    lastFocus = document.activeElement; show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+  }
+  function close(){ lb.classList.remove('open'); document.body.style.overflow = ''; img.src = ''; if (lastFocus) lastFocus.focus(); }
+  document.querySelectorAll('[data-gallery]').forEach(function(row){
+    row.addEventListener('click', function(e){
+      var btn = e.target.closest('.shot'); if (!btn) return;
+      open(row, Array.prototype.indexOf.call(row.querySelectorAll('.shot'), btn));
+    });
+  });
+  lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function(){ show(idx - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function(){ show(idx + 1); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+})();
+</script>
+</body>
+</html>
